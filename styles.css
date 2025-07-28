@@ -1192,10 +1192,12 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Mobile Navigation */
     .nav-menu {
         display: none;
     }
     
+    /* Mobile Hero Section */
     .hero-title {
         font-size: 2.5rem;
     }
@@ -1212,8 +1214,10 @@ section {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
     
+    /* Mobile Layout */
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1221,6 +1225,7 @@ section {
     
     .skills-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .projects-grid {
@@ -1230,6 +1235,7 @@ section {
     
     .project-card {
         padding: 20px;
+        margin-bottom: 15px;
     }
     
     .project-links {
@@ -1240,10 +1246,48 @@ section {
     .education-card {
         flex-direction: column;
         text-align: center;
+        padding: 20px;
     }
     
     .card-status {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    /* Mobile Section Indicator */
+    .section-indicator {
+        display: none;
+    }
+    
+    /* Mobile Scroll Fixes */
+    body {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Mobile Touch Improvements */
+    .nav-link, .btn, .project-link, .contact-card {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Mobile Animation Optimizations */
+    .project-card:hover,
+    .education-card:hover,
+    .skill-category:hover {
+        transform: none;
+    }
+    
+    /* Mobile Parallax Disable */
+    .bg-circle {
+        display: none;
+    }
+    
+    /* Mobile Particle System Disable */
+    .floating-shapes {
+        display: none;
     }
 }
 
@@ -1266,6 +1310,35 @@ section {
     
     .skill-category {
         padding: 1.5rem;
+    }
+    
+    /* Extra small mobile fixes */
+    .hero-buttons {
+        gap: 10px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .project-card {
+        padding: 15px;
+    }
+    
+    .contact-card {
+        padding: 15px;
+    }
+    
+    /* Disable all hover effects on mobile */
+    *:hover {
+        transform: none !important;
+    }
+    
+    /* Improve touch scrolling */
+    html, body {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
     }
 } 
 

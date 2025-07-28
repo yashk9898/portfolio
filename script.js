@@ -28,21 +28,32 @@ function initSmoothScrolling() {
             const navbarHeight = 80; // Height of fixed navbar
             const offsetTop = targetSection.offsetTop - navbarHeight;
             
-            // Use requestAnimationFrame for smoother scrolling
-            const startPosition = window.pageYOffset;
-            const distance = offsetTop - startPosition;
-            const duration = 1000; // 1 second
-            let start = null;
+            // Check if device is mobile/touch
+            const isMobile = 'ontouchstart' in window || window.innerWidth <= 768;
             
-            function animation(currentTime) {
-                if (start === null) start = currentTime;
-                const timeElapsed = currentTime - start;
-                const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
-                window.scrollTo(0, run);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
+            if (isMobile) {
+                // Use native smooth scroll for mobile devices
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Use requestAnimationFrame for desktop
+                const startPosition = window.pageYOffset;
+                const distance = offsetTop - startPosition;
+                const duration = 1000; // 1 second
+                let start = null;
+                
+                function animation(currentTime) {
+                    if (start === null) start = currentTime;
+                    const timeElapsed = currentTime - start;
+                    const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                }
+                
+                requestAnimationFrame(animation);
             }
-            
-            requestAnimationFrame(animation);
         }
     };
     
@@ -441,22 +452,38 @@ function initContactInteractions() {
     });
 }
 
-// Mobile Gesture Support
+// Enhanced Mobile Gesture Support
 function initMobileGestures() {
     let touchStartY = 0;
     let touchStartX = 0;
     let touchEndY = 0;
     let touchEndX = 0;
+    let isScrolling = false;
+
+    // Prevent default touch behaviors that might interfere
+    document.addEventListener('touchmove', function(e) {
+        // Allow normal scrolling but prevent horizontal scroll
+        if (Math.abs(e.touches[0].clientX - touchStartX) > Math.abs(e.touches[0].clientY - touchStartY)) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 
     document.addEventListener('touchstart', function(e) {
         touchStartY = e.changedTouches[0].screenY;
         touchStartX = e.changedTouches[0].screenX;
+        isScrolling = false;
+    });
+
+    document.addEventListener('touchmove', function(e) {
+        isScrolling = true;
     });
 
     document.addEventListener('touchend', function(e) {
-        touchEndY = e.changedTouches[0].screenY;
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
+        if (!isScrolling) {
+            touchEndY = e.changedTouches[0].screenY;
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }
     });
 
     function handleSwipe() {
@@ -468,23 +495,32 @@ function initMobileGestures() {
             if (Math.abs(diffY) > Math.abs(diffX)) {
                 // Vertical swipe
                 if (diffY > 0) {
-                    // Swipe up - could trigger next section
-                    console.log('Swipe up detected');
+                    // Swipe up - navigate to next section
+                    navigateSections('down');
                 } else {
-                    // Swipe down - could trigger previous section
-                    console.log('Swipe down detected');
-                }
-            } else {
-                // Horizontal swipe
-                if (diffX > 0) {
-                    // Swipe left
-                    console.log('Swipe left detected');
-                } else {
-                    // Swipe right
-                    console.log('Swipe right detected');
+                    // Swipe down - navigate to previous section
+                    navigateSections('up');
                 }
             }
         }
+    }
+    
+    // Mobile-specific scroll optimizations
+    if ('ontouchstart' in window) {
+        // Disable hover effects on mobile
+        const hoverElements = document.querySelectorAll('.project-card, .education-card, .skill-category, .contact-card');
+        hoverElements.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'none';
+            });
+        });
+        
+        // Improve touch targets
+        const touchTargets = document.querySelectorAll('.nav-link, .btn, .project-link');
+        touchTargets.forEach(target => {
+            target.style.minHeight = '44px';
+            target.style.padding = '12px 16px';
+        });
     }
 }
 
