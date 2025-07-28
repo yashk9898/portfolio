@@ -16,36 +16,129 @@ document.addEventListener('DOMContentLoaded', function() {
     initRedirects();
 });
 
-// Smooth Scrolling with enhanced easing
+// Enhanced Smooth Scrolling with better error handling
 function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('.nav-link');
     const heroButtons = document.querySelectorAll('.hero-buttons .btn');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
     
     const smoothScrollTo = (targetId) => {
         const targetSection = document.querySelector(targetId);
         if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+            const navbarHeight = 80; // Height of fixed navbar
+            const offsetTop = targetSection.offsetTop - navbarHeight;
+            
+            // Use requestAnimationFrame for smoother scrolling
+            const startPosition = window.pageYOffset;
+            const distance = offsetTop - startPosition;
+            const duration = 1000; // 1 second
+            let start = null;
+            
+            function animation(currentTime) {
+                if (start === null) start = currentTime;
+                const timeElapsed = currentTime - start;
+                const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+            
+            requestAnimationFrame(animation);
         }
     };
     
+    // Easing function for smooth animation
+    function easeInOutCubic(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t * t + b;
+        t -= 2;
+        return c / 2 * (t * t * t + 2) + b;
+    }
+    
+    // Navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            smoothScrollTo(targetId);
+            if (targetId && targetId.startsWith('#')) {
+                smoothScrollTo(targetId);
+                
+                // Add active state to clicked link
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            }
         });
     });
     
+    // Hero buttons
     heroButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if (href.startsWith('#')) {
+            if (href && href.startsWith('#')) {
                 e.preventDefault();
                 smoothScrollTo(href);
+            }
+        });
+    });
+    
+    // Scroll indicator click
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function(e) {
+            e.preventDefault();
+            smoothScrollTo('#education');
+        });
+    }
+    
+    // Update active nav link on scroll
+    window.addEventListener('scroll', function() {
+        const sections = ['#hero', '#education', '#skills', '#projects', '#contact'];
+        const scrollPosition = window.pageYOffset + 100;
+        
+        sections.forEach(sectionId => {
+            const section = document.querySelector(sectionId);
+            if (section) {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === sectionId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            }
+        });
+    });
+    
+    // Add scroll indicator to show current section
+    const sectionIndicator = document.createElement('div');
+    sectionIndicator.className = 'section-indicator';
+    sectionIndicator.innerHTML = `
+        <div class="indicator-dot"></div>
+        <div class="indicator-label"></div>
+    `;
+    document.body.appendChild(sectionIndicator);
+    
+    // Update scroll indicator
+    window.addEventListener('scroll', function() {
+        const sections = ['#hero', '#education', '#skills', '#projects', '#contact'];
+        const sectionNames = ['Home', 'Education', 'Skills', 'Projects', 'Contact'];
+        const scrollPosition = window.pageYOffset + 200;
+        
+        sections.forEach((sectionId, index) => {
+            const section = document.querySelector(sectionId);
+            if (section) {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    const indicator = document.querySelector('.section-indicator');
+                    if (indicator) {
+                        indicator.querySelector('.indicator-label').textContent = sectionNames[index];
+                        indicator.style.opacity = '1';
+                    }
+                }
             }
         });
     });
