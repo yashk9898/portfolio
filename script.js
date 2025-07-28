@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactInteractions();
     initMobileGestures();
     initKeyboardShortcuts();
+    initRedirects();
 });
 
 // Smooth Scrolling with enhanced easing
@@ -538,4 +539,269 @@ window.addEventListener('load', function() {
 });
 
 // Initialize page with fade-in effect
-document.body.style.opacity = '0'; 
+document.body.style.opacity = '0';
+
+// Redirect functionality
+function initRedirects() {
+    // Project links redirect with loading animation
+    const projectLinks = document.querySelectorAll('.project-link');
+    
+    projectLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if it's a placeholder link
+            if (href === '#') {
+                e.preventDefault();
+                showNotification('Live demo coming soon!', 'info');
+                return;
+            }
+            
+            // External links - show loading and redirect
+            if (href.startsWith('http')) {
+                e.preventDefault();
+                showLoadingOverlay();
+                
+                // Simulate loading time for better UX
+                setTimeout(() => {
+                    window.open(href, '_blank');
+                    hideLoadingOverlay();
+                }, 800);
+            }
+        });
+    });
+    
+    // GitHub links redirect
+    const githubLinks = document.querySelectorAll('a[href*="github.com"]');
+    githubLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLoadingOverlay();
+            
+            setTimeout(() => {
+                window.open(this.href, '_blank');
+                hideLoadingOverlay();
+            }, 600);
+        });
+    });
+    
+    // Hero buttons redirect
+    const heroButtons = document.querySelectorAll('.hero-buttons a[href^="http"]');
+    heroButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLoadingOverlay();
+            
+            setTimeout(() => {
+                window.open(this.href, '_blank');
+                hideLoadingOverlay();
+            }, 800);
+        });
+    });
+    
+    // Contact buttons redirect
+    const contactButtons = document.querySelectorAll('.contact-card a[href^="http"]');
+    contactButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLoadingOverlay();
+            
+            setTimeout(() => {
+                window.open(this.href, '_blank');
+                hideLoadingOverlay();
+            }, 600);
+        });
+    });
+    
+    // Email links redirect
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('Opening email client...', 'info');
+            
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 500);
+        });
+    });
+}
+
+// Loading overlay functions
+function showLoadingOverlay() {
+    const overlay = document.createElement('div');
+    overlay.id = 'loading-overlay';
+    overlay.innerHTML = `
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Redirecting...</p>
+        </div>
+    `;
+    
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    document.body.appendChild(overlay);
+    
+    // Add loading spinner styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .loading-content {
+            text-align: center;
+            color: white;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(102, 126, 234, 0.3);
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    setTimeout(() => {
+        overlay.style.opacity = '1';
+    }, 10);
+}
+
+function hideLoadingOverlay() {
+    const overlay = document.getElementById('loading-overlay');
+    if (overlay) {
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            overlay.remove();
+        }, 300);
+    }
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'info' ? '#667eea' : type === 'success' ? '#4caf50' : '#f44336'};
+        color: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 10001;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+        font-weight: 500;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 10);
+    
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
+}
+
+// Enhanced section navigation with projects
+function navigateSections(direction) {
+    const sections = ['#hero', '#education', '#skills', '#projects', '#contact'];
+    const currentSection = getCurrentSection();
+    const currentIndex = sections.indexOf(currentSection);
+    
+    let nextIndex;
+    if (direction === 'up') {
+        nextIndex = currentIndex > 0 ? currentIndex - 1 : sections.length - 1;
+    } else {
+        nextIndex = currentIndex < sections.length - 1 ? currentIndex + 1 : 0;
+    }
+    
+    smoothScrollTo(sections[nextIndex]);
+}
+
+// Update getCurrentSection to include projects
+function getCurrentSection() {
+    const sections = ['#hero', '#education', '#skills', '#projects', '#contact'];
+    const scrollPosition = window.pageYOffset + 100;
+    
+    for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.querySelector(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+            return sections[i];
+        }
+    }
+    return '#hero';
+}
+
+// Add keyboard shortcut for projects
+function initKeyboardShortcuts() {
+    document.addEventListener('keydown', function(e) {
+        switch(e.key) {
+            case 'Escape':
+                console.log('Escape pressed');
+                break;
+            case 'ArrowUp':
+                e.preventDefault();
+                navigateSections('up');
+                break;
+            case 'ArrowDown':
+                e.preventDefault();
+                navigateSections('down');
+                break;
+            case 'h':
+            case 'H':
+                e.preventDefault();
+                smoothScrollTo('#hero');
+                break;
+            case 'e':
+            case 'E':
+                e.preventDefault();
+                smoothScrollTo('#education');
+                break;
+            case 's':
+            case 'S':
+                e.preventDefault();
+                smoothScrollTo('#skills');
+                break;
+            case 'p':
+            case 'P':
+                e.preventDefault();
+                smoothScrollTo('#projects');
+                break;
+            case 'c':
+            case 'C':
+                e.preventDefault();
+                smoothScrollTo('#contact');
+                break;
+        }
+    });
+} 
