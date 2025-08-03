@@ -1,7 +1,7 @@
 ﻿# Portfolio - Yash Kava
 
 ## 🚀 About Me
-Computer Science Student & Developer based in Ahmedabad, Gujarat. Dedicated to delivering innovative software solutions and web development services.
+Computer Science Student & Developer based in Ahmedabad, Gujarat.
 
 ## 🛠️ Technologies Used
 - **Frontend**: HTML5, CSS3, JavaScript
@@ -47,4 +47,5 @@ portfolio/
 ```
 
 **Made with ❤️ by Yash Kava**
+
 
