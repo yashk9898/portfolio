@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Kava — Full Stack Developer</title>
+  <meta name="description" content="Yash Kava is a Full Stack Developer from Ahmedabad building fast, scalable web applications with React, Next.js, Node.js and MongoDB." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Progress Bar -->
+  <div id="progressBar"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursorDot"></div>
+  <div id="cursorRing"></div>
+
+  <!-- ═══════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-wrap">
+      <a href="#home" class="logo" id="nav-logo">
+        <span class="logo-bracket">&lt;</span>YK<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#skills" data-nav="skills">Skills</a></li>
+        <li><a href="#experience" data-nav="experience">Experience</a></li>
+        <li><a href="#projects" data-nav="projects">Projects</a></li>
+        <li><a href="#education" data-nav="education">Education</a></li>
+        <li><a href="#contact" data-nav="contact">Contact</a></li>
+      </ul>
+      <a href="mailto:yashkawa5@gmail.com" class="nav-btn" id="hire-btn">
+        <span>Hire Me</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m7 17 9.2-9.2M17 17V7H7"/></svg>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#about" class="m-link">About</a>
+      <a href="#skills" class="m-link">Skills</a>
+      <a href="#experience" class="m-link">Experience</a>
+      <a href="#projects" class="m-link">Projects</a>
+      <a href="#education" class="m-link">Education</a>
+      <a href="#contact" class="m-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════
+       HERO
+  ═══════════════════════════════════ -->
+  <section id="home" class="hero">
+    <!-- Mesh gradient blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <!-- Grid overlay -->
+    <div class="grid-overlay"></div>
+
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="avail-pill" data-aos="fade-down">
+          <span class="pulse-ring"></span>
+          <span class="pulse-dot"></span>
+          Open to Work
+        </div>
+
+        <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100">
+          <span class="line-1">I'm <em>Yash</em></span>
+          <span class="line-2">Kava<span class="cursor-blink">_</span></span>
+        </h1>
+
+        <div class="hero-role" data-aos="fade-up" data-aos-delay="200">
+          <span class="role-prefix">const role =</span>
+          <span class="role-text" id="roleText">"Full Stack Developer"</span>
+        </div>
+
+        <p class="hero-bio" data-aos="fade-up" data-aos-delay="300">
+          Building scalable full-stack applications with React, Node.js & MongoDB.
+          Currently crafting <strong>Lerning.com</strong> — a school management platform with 20+ features.
+        </p>
+
+        <div class="hero-ctas" data-aos="fade-up" data-aos-delay="400">
+          <a href="#projects" class="cta-primary" id="work-cta">
+            View Projects
+            <span class="cta-arrow">→</span>
+          </a>
+          <a href="#contact" class="cta-ghost">Let's Talk</a>
+        </div>
+
+        <div class="hero-socials" data-aos="fade-up" data-aos-delay="500">
+          <a href="https://github.com/yashk9898" target="_blank" class="s-link" id="hero-github" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="mailto:yashkawa5@gmail.com" class="s-link" id="hero-email" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="tel:+919099492667" class="s-link" id="hero-phone" aria-label="Phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39A2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right" data-aos="fade-left" data-aos-delay="200">
+        <div class="card-3d-wrap" id="card3dWrap">
+          <div class="card-3d">
+            <!-- Profile Ring -->
+            <div class="profile-ring">
+              <svg viewBox="0 0 200 200" class="ring-svg">
+                <circle cx="100" cy="100" r="90" fill="none" stroke="url(#ringGrad)" stroke-width="2" stroke-dasharray="10 6"/>
+                <defs>
+                  <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#7c3aed"/>
+                    <stop offset="50%" stop-color="#06b6d4"/>
+                    <stop offset="100%" stop-color="#7c3aed"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="profile-avatar">
+                <span>YK</span>
+              </div>
+            </div>
+
+            <!-- Floating Tech Chips -->
+            <div class="tech-chip chip-1">⚛ React</div>
+            <div class="tech-chip chip-2">🟢 Node.js</div>
+            <div class="tech-chip chip-3">🍃 MongoDB</div>
+            <div class="tech-chip chip-4">☕ Spring Boot</div>
+            <div class="tech-chip chip-5">🔌 Socket.IO</div>
+
+            <!-- Stats mini cards -->
+            <div class="mini-stat ms-1">
+              <span class="ms-num">20+</span>
+              <span class="ms-lbl">Features</span>
+            </div>
+            <div class="mini-stat ms-2">
+              <span class="ms-num">4mo</span>
+              <span class="ms-lbl">Intern</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-ind">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-label" data-aos="fade-right">// about me</div>
+      <div class="about-layout">
+        <div class="about-copy" data-aos="fade-up">
+          <h2 class="sec-title">Crafting digital<br/><span class="grad">experiences</span></h2>
+          <p class="about-p">
+            I'm a <strong>Full Stack Developer</strong> pursuing B.C.A at <strong>Sabarmati University</strong>, Ahmedabad. I completed a 4-month internship at <strong>Mars Technology Labs</strong> where I single-handedly architected and shipped <em>Lerning.com</em> — a comprehensive school management platform that replaced scattered WhatsApp groups and Excel sheets with a unified, role-based digital system.
+          </p>
+          <p class="about-p">
+            I love working across the entire stack — from pixel-perfect UIs in <strong>React & Next.js</strong> to efficient REST APIs in <strong>Node.js/Express</strong>, real-time features with <strong>Socket.IO</strong>, and enterprise-grade microservices using <strong>Java Spring Boot</strong>.
+          </p>
+          <div class="info-chips">
+            <div class="info-chip"><span>📍</span> Ahmedabad, Gujarat</div>
+            <div class="info-chip"><span>🎓</span> BCA — 2nd Year</div>
+            <div class="info-chip"><span>🗣️</span> English · Hindi · Gujarati</div>
+            <div class="info-chip"><span>🎂</span> 19 Sep 2004</div>
+          </div>
+          <div class="about-actions">
+            <a href="https://github.com/yashk9898" target="_blank" class="cta-primary sm" id="about-github-btn">
+              GitHub Profile <span class="cta-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-visual" data-aos="fade-up" data-aos-delay="150">
+          <div class="code-window">
+            <div class="window-bar">
+              <span class="wb-dot r"></span>
+              <span class="wb-dot y"></span>
+              <span class="wb-dot g"></span>
+              <span class="wb-file">about.ts</span>
+            </div>
+            <div class="window-body">
+              <pre><span class="t-kw">interface</span> <span class="t-type">Developer</span> {
+  name<span class="t-op">:</span> <span class="t-str">string</span>;
+  stack<span class="t-op">:</span> <span class="t-str">string</span>[];
+  passion<span class="t-op">:</span> <span class="t-str">string</span>;
+}
+
+<span class="t-kw">const</span> <span class="t-var">yash</span><span class="t-op">:</span> <span class="t-type">Developer</span> <span class="t-op">=</span> {
+  <span class="t-prop">name</span><span class="t-op">:</span> <span class="t-str">"Yash Kava"</span>,
+  <span class="t-prop">stack</span><span class="t-op">:</span> [
+    <span class="t-str">"React"</span>, <span class="t-str">"Next.js"</span>, <span class="t-str">"Node.js"</span>,
+    <span class="t-str">"MongoDB"</span>, <span class="t-str">"Socket.IO"</span>,
+    <span class="t-str">"Spring Boot"</span>
+  ],
+  <span class="t-prop">passion</span><span class="t-op">:</span> <span class="t-str">"Building things that matter"</span>,
+};</pre>
+            </div>
+          </div>
+
+          <div class="xp-cards">
+            <div class="xp-card">
+              <div class="xp-num">20<span>+</span></div>
+              <div class="xp-lbl">Features Shipped</div>
+            </div>
+            <div class="xp-card">
+              <div class="xp-num">3<span>+</span></div>
+              <div class="xp-lbl">Projects Built</div>
+            </div>
+            <div class="xp-card">
+              <div class="xp-num">4</div>
+              <div class="xp-lbl">Month Internship</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       SKILLS
+  ═══════════════════════════════════ -->
+  <section id="skills" class="alt-bg">
+    <div class="container">
+      <div class="sec-label" data-aos="fade-right">// tech stack</div>
+      <h2 class="sec-title centered" data-aos="fade-up">Skills &amp; <span class="grad">Technologies</span></h2>
+      <p class="sec-sub" data-aos="fade-up">Tools and technologies I work with on a daily basis</p>
+
+      <div class="skills-master" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="skill-row" id="skill-row-languages">
+          <div class="skill-row-header">
+            <span class="skill-cat-icon">💻</span>
+            <span class="skill-cat-name">Languages</span>
+          </div>
+          <div class="skill-pills">
+            <div class="sp sp-default">
+              <span class="sp-icon">JS</span>JavaScript
+              <div class="sp-bar"><div class="sp-fill" style="width:92%"></div></div>
+            </div>
+            <div class="sp sp-default">
+              <span class="sp-icon">TS</span>TypeScript
+              <div class="sp-bar"><div class="sp-fill" style="width:82%"></div></div>
+            </div>
+            <div class="sp sp-default">
+              <span class="sp-icon">☕</span>Java
+              <div class="sp-bar"><div class="sp-fill" style="width:70%"></div></div>
+            </div>
+            <div class="sp sp-default">
+              <span class="sp-icon">🗃</span>SQL
+              <div class="sp-bar"><div class="sp-fill" style="width:65%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-row" id="skill-row-frontend">
+          <div class="skill-row-header">
+            <span class="skill-cat-icon">🎨</span>
+            <span class="skill-cat-name">Frontend</span>
+          </div>
+          <div class="skill-pills">
+            <div class="sp sp-blue">⚛ React.js</div>
+            <div class="sp sp-blue">▲ Next.js</div>
+            <div class="sp sp-blue">🔄 Redux</div>
+            <div class="sp sp-blue">🌊 Tailwind CSS</div>
+            <div class="sp sp-blue">🅱 Bootstrap 5</div>
+          </div>
+        </div>
+
+        <div class="skill-row" id="skill-row-backend">
+          <div class="skill-row-header">
+            <span class="skill-cat-icon">⚙️</span>
+            <span class="skill-cat-name">Backend</span>
+          </div>
+          <div class="skill-pills">
+            <div class="sp sp-green">🟢 Node.js</div>
+            <div class="sp sp-green">⚡ Express.js</div>
+            <div class="sp sp-green">🔌 Socket.IO</div>
+            <div class="sp sp-green">🔐 JWT Auth</div>
+            <div class="sp sp-green">🛣 REST APIs</div>
+          </div>
+        </div>
+
+        <div class="skill-row" id="skill-row-db">
+          <div class="skill-row-header">
+            <span class="skill-cat-icon">🗄️</span>
+            <span class="skill-cat-name">Database</span>
+          </div>
+          <div class="skill-pills">
+            <div class="sp sp-emerald">🍃 MongoDB</div>
+            <div class="sp sp-emerald">🔗 Mongoose</div>
+            <div class="sp sp-emerald">📊 Aggregation</div>
+            <div class="sp sp-emerald">⚡ Indexing</div>
+          </div>
+        </div>
+
+        <div class="skill-row" id="skill-row-enterprise">
+          <div class="skill-row-header">
+            <span class="skill-cat-icon">🏢</span>
+            <span class="skill-cat-name">Enterprise</span>
+          </div>
+          <div class="skill-pills">
+            <div class="sp sp-orange">☕ Spring Boot</div>
+            <div class="sp sp-orange">🍃 Spring Data MongoDB</div>
+          </div>
+        </div>
+
+        <div class="skill-row" id="skill-row-integrations">
+          <div class="skill-row-header">
+            <span class="skill-cat-icon">🔌</span>
+            <span class="skill-cat-name">Integrations</span>
+          </div>
+          <div class="skill-pills">
+            <div class="sp sp-violet">🎥 Zoom API</div>
+            <div class="sp sp-violet">🔍 Google APIs</div>
+            <div class="sp sp-violet">📧 Nodemailer</div>
+            <div class="sp sp-violet">📱 Twilio SMS</div>
+            <div class="sp sp-violet">⏱ node-cron</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       EXPERIENCE
+  ═══════════════════════════════════ -->
+  <section id="experience">
+    <div class="container">
+      <div class="sec-label" data-aos="fade-right">// experience</div>
+      <h2 class="sec-title" data-aos="fade-up">Work <span class="grad">Experience</span></h2>
+
+      <div class="exp-layout">
+
+        <!-- Mars Technology Labs -->
+        <div class="exp-block" data-aos="fade-up" id="exp-mars-block">
+          <div class="exp-left">
+            <div class="exp-dot"></div>
+            <div class="exp-line"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-row">
+              <div class="exp-logo mars-logo">M</div>
+              <div>
+                <h3 class="exp-role">Full Stack Developer — Intern</h3>
+                <p class="exp-company">Mars Technology Labs · Lerning.com · Ahmedabad</p>
+              </div>
+              <div class="exp-duration-pill">4 Months</div>
+            </div>
+            <div class="exp-achievements">
+              <div class="ach-item" id="ach-1">
+                <span class="ach-icon">🏗</span>
+                <div><strong>Built complete school management platform</strong> replacing WhatsApp and Excel with a unified digital system for schools</div>
+              </div>
+              <div class="ach-item" id="ach-2">
+                <span class="ach-icon">👥</span>
+                <div>Created <strong>3 separate role dashboards</strong> — Admin, Teacher, Student — with RBAC and secure JWT login</div>
+              </div>
+              <div class="ach-item" id="ach-3">
+                <span class="ach-icon">💬</span>
+                <div>Implemented <strong>real-time chat</strong> between students and teachers using Socket.IO</div>
+              </div>
+              <div class="ach-item" id="ach-4">
+                <span class="ach-icon">🎥</span>
+                <div>Integrated <strong>Zoom API</strong> for auto-creation of class meeting links — zero manual work needed</div>
+              </div>
+              <div class="ach-item" id="ach-5">
+                <span class="ach-icon">✅</span>
+                <div>Developed <strong>20+ features</strong>: attendance, exams, fee tracking, salary, library, scheduling</div>
+              </div>
+              <div class="ach-item" id="ach-6">
+                <span class="ach-icon">🤖</span>
+                <div>Built <strong>auto-grading MCQ exam engine</strong> with timed tests and instant result reports</div>
+              </div>
+              <div class="ach-item" id="ach-7">
+                <span class="ach-icon">⏱</span>
+                <div>Automated reminders and background tasks using <strong>node-cron</strong> scheduled jobs</div>
+              </div>
+              <div class="ach-item" id="ach-8">
+                <span class="ach-icon">🔐</span>
+                <div>Applied security: <strong>bcrypt hashing, JWT, rate limiting &amp; input validation</strong></div>
+              </div>
+            </div>
+            <div class="exp-tech-row">
+              <span class="etag blue">React.js</span>
+              <span class="etag green">Node.js</span>
+              <span class="etag emerald">MongoDB</span>
+              <span class="etag violet">Socket.IO</span>
+              <span class="etag violet">Zoom API</span>
+              <span class="etag orange">Spring Boot</span>
+              <span class="etag">Redux</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teaching -->
+        <div class="exp-block" data-aos="fade-up" data-aos-delay="100" id="exp-teach-block">
+          <div class="exp-left">
+            <div class="exp-dot secondary"></div>
+          </div>
+          <div class="exp-body compact">
+            <div class="exp-company-row">
+              <div class="exp-logo teach-logo">📚</div>
+              <div>
+                <h3 class="exp-role">Teaching Professional</h3>
+                <p class="exp-company">Ahmedabad</p>
+              </div>
+              <div class="exp-duration-pill secondary">1 Year</div>
+            </div>
+            <ul class="exp-list">
+              <li>Taught students and prepared structured lesson plans and learning materials</li>
+              <li>Assessed student performance and provided actionable feedback</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       PROJECTS
+  ═══════════════════════════════════ -->
+  <section id="projects" class="alt-bg">
+    <div class="container">
+      <div class="sec-label" data-aos="fade-right">// projects</div>
+      <h2 class="sec-title" data-aos="fade-up">Things I've <span class="grad">Built</span></h2>
+
+      <!-- FEATURED: Lerning.com -->
+      <div class="proj-featured" data-aos="fade-up" id="lerning-featured">
+        <div class="pf-glow"></div>
+        <div class="pf-left">
+          <div class="pf-label">⭐ Featured Project</div>
+          <div class="pf-logo-wrap">
+            <div class="pf-logo">L</div>
+            <div>
+              <h3 class="pf-title">Lerning.com</h3>
+              <p class="pf-sub">School Management &amp; Live Class Platform</p>
+            </div>
+          </div>
+          <p class="pf-desc">
+            A full-featured digital control room for schools — manages students, teachers, exams, fees, live classes and more. Three dedicated role portals with real-time chat, automated Zoom classes, an MCQ exam engine and financial tracking all in one platform. Architected to scale with Node.js clustering and optimized MongoDB aggregation pipelines.
+          </p>
+          <div class="pf-features">
+            <div class="pf-feat"><span>👥</span> 3 Role Portals</div>
+            <div class="pf-feat"><span>✅</span> 20+ Features</div>
+            <div class="pf-feat"><span>🎥</span> Zoom Auto-Classes</div>
+            <div class="pf-feat"><span>💬</span> Real-time Chat</div>
+            <div class="pf-feat"><span>🤖</span> Auto-Grade Exams</div>
+            <div class="pf-feat"><span>💳</span> Fee Tracking</div>
+          </div>
+          <div class="pf-stack">
+            <span class="stag blue">React.js</span>
+            <span class="stag blue">Next.js</span>
+            <span class="stag green">Node.js</span>
+            <span class="stag emerald">MongoDB</span>
+            <span class="stag violet">Socket.IO</span>
+            <span class="stag violet">Zoom API</span>
+            <span class="stag orange">Spring Boot</span>
+          </div>
+          <a href="https://github.com/yashkmartian-art/Lerning.com-" target="_blank" class="cta-primary sm" id="lerning-btn">
+            View on GitHub <span class="cta-arrow">→</span>
+          </a>
+        </div>
+        <div class="pf-right">
+          <div class="pf-mockup">
+            <div class="mock-header">
+              <div class="mock-dots"><span></span><span></span><span></span></div>
+              <div class="mock-url">lerning.com/admin</div>
+            </div>
+            <div class="mock-body">
+              <div class="mock-sidebar">
+                <div class="ms-item active">📊 Dashboard</div>
+                <div class="ms-item">👥 Students</div>
+                <div class="ms-item">👨‍🏫 Teachers</div>
+                <div class="ms-item">📝 Exams</div>
+                <div class="ms-item">💳 Fees</div>
+                <div class="ms-item">🎥 Classes</div>
+                <div class="ms-item">📚 Library</div>
+              </div>
+              <div class="mock-main">
+                <div class="mock-stat-row">
+                  <div class="mock-stat">
+                    <div class="mst-n">248</div>
+                    <div class="mst-l">Students</div>
+                  </div>
+                  <div class="mock-stat">
+                    <div class="mst-n">18</div>
+                    <div class="mst-l">Teachers</div>
+                  </div>
+                  <div class="mock-stat">
+                    <div class="mst-n">94%</div>
+                    <div class="mst-l">Attendance</div>
+                  </div>
+                </div>
+                <div class="mock-chart">
+                  <div class="mc-bar" style="height:55%"></div>
+                  <div class="mc-bar" style="height:70%"></div>
+                  <div class="mc-bar" style="height:45%"></div>
+                  <div class="mc-bar" style="height:85%"></div>
+                  <div class="mc-bar active" style="height:90%"></div>
+                  <div class="mc-bar" style="height:65%"></div>
+                </div>
+                <div class="mock-chat">
+                  <div class="mc-msg left">Class meeting in 5 mins 🎥</div>
+                  <div class="mc-msg right">Joining now!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Projects Grid -->
+      <div class="proj-grid">
+
+        <!-- E-Commerce -->
+        <div class="proj-card" data-aos="fade-up" id="ecommerce-card">
+          <div class="pc-header">
+            <div class="pc-icon ec-icon">🛒</div>
+            <a href="https://github.com/yashk9898" target="_blank" class="pc-gh-btn" id="ecom-gh-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+          </div>
+          <h3 class="pc-title">E-Commerce + AI Platform</h3>
+          <p class="pc-desc">Modern e-commerce app with Next.js 16, TypeScript, AI prompt integration via backend, full user auth with JWT, MongoDB aggregation-powered product API and Redux state management.</p>
+          <div class="pc-highlights">
+            <span>🤖 AI Feature</span>
+            <span>🔐 JWT Auth</span>
+            <span>📦 Full CRUD</span>
+          </div>
+          <div class="pc-stack">
+            <span class="stag blue">Next.js 16</span>
+            <span class="stag blue">TypeScript</span>
+            <span class="stag green">Node.js</span>
+            <span class="stag emerald">MongoDB</span>
+            <span class="stag">shadcn/ui</span>
+          </div>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="proj-card" data-aos="fade-up" data-aos-delay="100" id="portfolio-card">
+          <div class="pc-header">
+            <div class="pc-icon port-icon">🌐</div>
+            <a href="https://github.com/yashk9898" target="_blank" class="pc-gh-btn" id="port-gh-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+          </div>
+          <h3 class="pc-title">Developer Portfolio</h3>
+          <p class="pc-desc">This very portfolio — built from scratch with pure HTML, CSS &amp; JavaScript. Features particle animations, 3D card effects, custom cursor, typewriter, scroll-reveal and contact form — no frameworks needed.</p>
+          <div class="pc-highlights">
+            <span>✨ Animations</span>
+            <span>📱 Responsive</span>
+            <span>⚡ Vanilla JS</span>
+          </div>
+          <div class="pc-stack">
+            <span class="stag">HTML5</span>
+            <span class="stag">CSS3</span>
+            <span class="stag">JavaScript</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       EDUCATION
+  ═══════════════════════════════════ -->
+  <section id="education">
+    <div class="container">
+      <div class="sec-label" data-aos="fade-right">// education</div>
+      <h2 class="sec-title" data-aos="fade-up">Academic <span class="grad">Journey</span></h2>
+      <div class="edu-timeline">
+
+        <div class="edu-item" data-aos="fade-up" id="edu-bca">
+          <div class="edu-year-badge ongoing">2024 – Now</div>
+          <div class="edu-card">
+            <div class="edu-card-icon">🎓</div>
+            <div class="edu-card-body">
+              <h3 class="edu-degree">Bachelor of Computer Application</h3>
+              <p class="edu-school">Sabarmati University, Ahmedabad</p>
+              <p class="edu-note">2nd Year · 4 Semesters Completed</p>
+            </div>
+            <div class="edu-status ongoing-tag">Ongoing</div>
+          </div>
+        </div>
+
+        <div class="edu-item" data-aos="fade-up" data-aos-delay="100" id="edu-hsc">
+          <div class="edu-year-badge">Mar 2024</div>
+          <div class="edu-card">
+            <div class="edu-card-icon">📘</div>
+            <div class="edu-card-body">
+              <h3 class="edu-degree">Higher Secondary (H.S.C)</h3>
+              <p class="edu-school">Madhuvan International School</p>
+              <p class="edu-note">Percentage: <strong>78%</strong></p>
+            </div>
+            <div class="edu-status pass-tag">Passed</div>
+          </div>
+        </div>
+
+        <div class="edu-item" data-aos="fade-up" data-aos-delay="200" id="edu-ssc">
+          <div class="edu-year-badge">Mar 2018</div>
+          <div class="edu-card">
+            <div class="edu-card-icon">📗</div>
+            <div class="edu-card-body">
+              <h3 class="edu-degree">Secondary School (S.S.C)</h3>
+              <p class="edu-school">Sadbhavana School</p>
+              <p class="edu-note">Percentage: <strong>59%</strong></p>
+            </div>
+            <div class="edu-status pass-tag">Passed</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════ -->
+  <section id="contact" class="alt-bg">
+    <div class="container">
+      <div class="sec-label" data-aos="fade-right">// contact</div>
+      <h2 class="sec-title centered" data-aos="fade-up">Let's <span class="grad">Connect</span></h2>
+      <p class="sec-sub" data-aos="fade-up">Have a project, opportunity or just want to say hi? My inbox is always open.</p>
+
+      <div class="contact-layout">
+
+        <div class="contact-left" data-aos="fade-right">
+          <div class="cinfo-card" id="c-email">
+            <div class="cic-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="cic-label">Email</p>
+              <a href="mailto:yashkawa5@gmail.com" class="cic-val">yashkawa5@gmail.com</a>
+            </div>
+          </div>
+          <div class="cinfo-card" id="c-phone">
+            <div class="cic-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39A2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="cic-label">Phone</p>
+              <a href="tel:+919099492667" class="cic-val">+91 90994 92667</a>
+            </div>
+          </div>
+          <div class="cinfo-card" id="c-location">
+            <div class="cic-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="cic-label">Location</p>
+              <p class="cic-val">Nava Naroda, Ahmedabad — 380038</p>
+            </div>
+          </div>
+          <div class="cinfo-card" id="c-github">
+            <div class="cic-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </div>
+            <div>
+              <p class="cic-label">GitHub</p>
+              <a href="https://github.com/yashk9898" target="_blank" class="cic-val">github.com/yashk9898</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/yashkawa5@gmail.com" method="POST" data-aos="fade-left">
+          <div class="cf-row">
+            <div class="cf-group">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="name" placeholder="Your name" required />
+            </div>
+            <div class="cf-group">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="cf-group">
+            <label for="fsubject">Subject</label>
+            <input type="text" id="fsubject" name="_subject" placeholder="What's this about?" />
+          </div>
+          <div class="cf-group">
+            <label for="fmessage">Message</label>
+            <textarea id="fmessage" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="cta-primary full" id="submit-form-btn">
+            Send Message 🚀
+          </button>
+          <div class="cf-success" id="cfSuccess">
+            <span>✅</span> Message sent! I'll reply within 24 hours.
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>YK<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-copy">© 2026 Yash Kava · Built with passion in Ahmedabad 🇮🇳</p>
+        <div class="footer-links">
+          <a href="https://github.com/yashk9898" target="_blank" id="footer-gh">GitHub</a>
+          <a href="mailto:yashkawa5@gmail.com" id="footer-mail">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
