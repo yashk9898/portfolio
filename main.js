@@ -23,7 +23,7 @@ window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
   requestAnimationFrame(animCursor);
 })();
 
-document.querySelectorAll('a, button, .proj-card, .xp-card, .cinfo-card, .ach-item').forEach(el => {
+document.querySelectorAll('a, button, .proj-card, .xp-card, .cinfo-card, .ach-item, .proj-featured, .ats-card-preview').forEach(el => {
   el.addEventListener('mouseenter', () => ring.classList.add('big'));
   el.addEventListener('mouseleave', () => ring.classList.remove('big'));
 });
@@ -71,11 +71,11 @@ document.querySelectorAll('a, button, .proj-card, .xp-card, .cinfo-card, .ach-it
   const el = document.getElementById('roleText');
   if (!el) return;
   const roles = [
-    '"Full Stack Developer"',
-    '"React & Next.js Expert"',
-    '"Node.js Engineer"',
-    '"MongoDB Architect"',
-    '"Real-Time App Builder"',
+    '"Full Stack & AI Engineer"',
+    '"Next.js 16 & React 19 Specialist"',
+    '"ATS.AI & Lerning.com Creator"',
+    '"Node.js & MongoDB Architect"',
+    '"Docker & Cloud Builder"',
   ];
   let pi = 0, ci = 0, del = false;
 
@@ -107,7 +107,7 @@ document.querySelectorAll('a, button, .proj-card, .xp-card, .cinfo-card, .ach-it
 })();
 
 /* ── 7. PROJECT CARD TILT ── */
-document.querySelectorAll('.proj-card, .exp-body, .xp-card').forEach(card => {
+document.querySelectorAll('.proj-card, .exp-body, .xp-card, .ats-card-preview').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
     const x = ((e.clientX - r.left) / r.width  - 0.5) * 8;
