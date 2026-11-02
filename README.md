@@ -56,6 +56,12 @@ This repository contains the source code for the personal portfolio of **Yash Ka
 * **Tech Stack**: React.js, Next.js, Node.js, MongoDB, Socket.IO, Zoom API, Java Spring Boot.
 * **Capabilities**: 3 role-based portals, live Socket.IO chat, auto-generated Zoom meetings, MCQ exam engine, and financial tracking.
 
+### 4. 🏢 [Cryptware — 3D IT Company Website](https://cryptware.vercel.app)
+* **Live App**: [cryptware.vercel.app](https://cryptware.vercel.app)
+* **GitHub Repository**: [github.com/yashk9898/Cryptware](https://github.com/yashk9898/Cryptware)
+* **Tech Stack**: JavaScript, 3D WebGL / CSS3, HTML5, Vercel Serverless.
+* **Capabilities**: Interactive 3D graphics, fluid digital scene controls, technology service showcases, and sleek modern UI/UX design.
+
 ---
 
 ## ✨ Portfolio Key Features

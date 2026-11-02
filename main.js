@@ -92,7 +92,7 @@ document.querySelectorAll('a, button, .proj-card, .xp-card, .cinfo-card, .ach-it
 /* ── 6. 3D HERO CARD MOUSE TILT ── */
 (function initHeroTilt() {
   const wrap = document.getElementById('card3dWrap');
-  const card = wrap?.querySelector('.card-3d');
+  const card = wrap?.querySelector('.dev-card') || wrap?.querySelector('.card-3d');
   if (!wrap || !card) return;
 
   wrap.addEventListener('mousemove', e => {
@@ -269,7 +269,7 @@ document.querySelectorAll('.proj-card, .exp-body, .xp-card, .ats-card-preview').
     const ind = document.createElement('span');
     ind.style.cssText = `
       position:absolute; bottom:-2px; left:50%; width:0; height:2px;
-      background:linear-gradient(90deg,#7c3aed,#06b6d4); border-radius:2px;
+      background:linear-gradient(90deg, #6366f1, #0ea5e9); border-radius:2px;
       transform:translateX(-50%); transition:width .25s ease;
     `;
     l.appendChild(ind);
@@ -280,4 +280,31 @@ document.querySelectorAll('.proj-card, .exp-body, .xp-card, .ats-card-preview').
     });
     obs.observe(l, { attributes: true, attributeFilter: ['class'] });
   });
+})();
+
+/* ── 14. COPY EMAIL BUTTONS ── */
+(function initCopyEmail() {
+  function handleCopy(btn, textSelector) {
+    if (!btn) return;
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const email = btn.getAttribute('data-email') || 'yashkava98@gmail.com';
+      try {
+        await navigator.clipboard.writeText(email);
+        btn.classList.add('copied');
+        const textSpan = textSelector ? btn.querySelector(textSelector) : null;
+        const prevText = textSpan ? textSpan.textContent : '';
+        if (textSpan) textSpan.textContent = 'Copied! ✓';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          if (textSpan) textSpan.textContent = prevText;
+        }, 2200);
+      } catch (err) {
+        console.warn('Copy failed:', err);
+      }
+    });
+  }
+
+  handleCopy(document.getElementById('copyEmailBtn'), '#copyEmailText');
+  handleCopy(document.getElementById('copyEmailMini'));
 })();

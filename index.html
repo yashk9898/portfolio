@@ -68,9 +68,8 @@
     <div class="hero-container">
       <div class="hero-left">
         <div class="avail-pill" data-aos="fade-down">
-          <span class="pulse-ring"></span>
-          <span class="pulse-dot"></span>
-          Open to Work
+          <span class="beacon-dot"></span>
+          Available for Full-Time Roles
         </div>
 
         <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100">
@@ -94,6 +93,10 @@
             <span class="cta-arrow">→</span>
           </a>
           <a href="#contact" class="cta-ghost">Let's Talk</a>
+          <button class="btn-copy-email" id="copyEmailBtn" data-email="yashkava98@gmail.com" type="button" aria-label="Copy email address" title="Click to copy email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span id="copyEmailText">Copy Email</span>
+          </button>
         </div>
 
         <div class="hero-socials" data-aos="fade-up" data-aos-delay="500">
@@ -111,39 +114,51 @@
 
       <div class="hero-right" data-aos="fade-left" data-aos-delay="200">
         <div class="card-3d-wrap" id="card3dWrap">
-          <div class="card-3d">
-            <!-- Profile Ring -->
-            <div class="profile-ring">
-              <svg viewBox="0 0 200 200" class="ring-svg">
-                <circle cx="100" cy="100" r="90" fill="none" stroke="url(#ringGrad)" stroke-width="2" stroke-dasharray="10 6"/>
-                <defs>
-                  <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#7c3aed"/>
-                    <stop offset="50%" stop-color="#06b6d4"/>
-                    <stop offset="100%" stop-color="#7c3aed"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div class="profile-avatar">
-                <span>YK</span>
+          <div class="dev-card" id="heroDevCard">
+            <div class="dev-card-header">
+              <div class="mac-dots">
+                <span class="mdot r"></span>
+                <span class="mdot y"></span>
+                <span class="mdot g"></span>
+              </div>
+              <div class="dev-card-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <span>yash.config.ts</span>
+              </div>
+              <div class="dev-card-status">
+                <span class="live-dot"></span>
+                <span>Active</span>
               </div>
             </div>
-
-            <!-- Floating Tech Chips -->
-            <div class="tech-chip chip-1">⚛ React / Next.js</div>
-            <div class="tech-chip chip-2">📱 React Native</div>
-            <div class="tech-chip chip-3">🛍️ xTrendz</div>
-            <div class="tech-chip chip-4">🤖 ATS.AI</div>
-            <div class="tech-chip chip-5">🟢 Node.js / TS</div>
-
-            <!-- Stats mini cards -->
-            <div class="mini-stat ms-1">
-              <span class="ms-num">50+</span>
-              <span class="ms-lbl">Features</span>
+            <div class="dev-card-body">
+              <div class="code-line"><span class="c-k">const</span> <span class="c-v">developer</span> <span class="c-o">=</span> {</div>
+              <div class="code-line indent"><span class="c-p">name:</span> <span class="c-s">"Yash Kava"</span>,</div>
+              <div class="code-line indent"><span class="c-p">role:</span> <span class="c-s">"Full Stack Developer"</span>,</div>
+              <div class="code-line indent"><span class="c-p">company:</span> <span class="c-s">"Amderon Trendz Pvt Ltd"</span>,</div>
+              <div class="code-line indent"><span class="c-p">focus:</span> [</div>
+              <div class="code-line indent-2"><span class="c-s">"React.js / Next.js 16"</span>,</div>
+              <div class="code-line indent-2"><span class="c-s">"React Native (Expo)"</span>,</div>
+              <div class="code-line indent-2"><span class="c-s">"Node.js / Express / TS"</span>,</div>
+              <div class="code-line indent-2"><span class="c-s">"MongoDB Atlas &amp; Docker"</span></div>
+              <div class="code-line indent">],</div>
+              <div class="code-line indent"><span class="c-p">contributions:</span> <span class="c-b">1032</span>, <span class="c-o">// GitHub 2026</span></div>
+              <div class="code-line indent"><span class="c-p">location:</span> <span class="c-s">"Ahmedabad, India"</span>,</div>
+              <div class="code-line indent"><span class="c-p">status:</span> <span class="c-s">"Available for Full-Time Roles"</span></div>
+              <div class="code-line">};</div>
             </div>
-            <div class="mini-stat ms-2">
-              <span class="ms-num">Full Stack</span>
-              <span class="ms-lbl">Amderon Trendz</span>
+            <div class="dev-card-footer">
+              <div class="dev-stat-item">
+                <span class="dsi-label">Current Role</span>
+                <span class="dsi-val">Amderon Trendz</span>
+              </div>
+              <div class="dev-stat-item">
+                <span class="dsi-label">Flagship</span>
+                <span class="dsi-val">ATS.AI &amp; xTrendz</span>
+              </div>
+              <div class="dev-stat-item">
+                <span class="dsi-label">GitHub Activity</span>
+                <span class="dsi-val">1,032+ Commits</span>
+              </div>
             </div>
           </div>
         </div>
@@ -156,6 +171,32 @@
       <span>Scroll</span>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════
+       METRICS & PROOF STRIP
+  ═══════════════════════════════════ -->
+  <div class="metrics-strip">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="mc-num">1,032+</div>
+          <div class="mc-lbl">GitHub Contributions in 2026</div>
+        </div>
+        <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="mc-num">50+</div>
+          <div class="mc-lbl">Production Features Shipped</div>
+        </div>
+        <div class="metric-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="mc-num">24+</div>
+          <div class="mc-lbl">Backend Controllers Engineered</div>
+        </div>
+        <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="mc-num">&lt;200MB</div>
+          <div class="mc-lbl">Hardened Docker Standalone Trace</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════
        ABOUT
@@ -719,24 +760,87 @@
         <div class="proj-card" data-aos="fade-up" data-aos-delay="100" id="portfolio-card">
           <div class="pc-header">
             <div class="pc-icon port-icon">🌐</div>
-            <a href="https://github.com/yashk9898" target="_blank" class="pc-gh-btn" id="port-gh-btn">
+            <a href="https://github.com/yashk9898/portfolio" target="_blank" class="pc-gh-btn" id="port-gh-btn" title="GitHub Repository">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             </a>
           </div>
           <h3 class="pc-title">Developer Portfolio</h3>
-          <p class="pc-desc">This very portfolio — built from scratch with pure HTML, CSS &amp; JavaScript. Features particle animations, 3D card effects, custom cursor, typewriter, scroll-reveal and contact form — no frameworks needed.</p>
+          <p class="pc-desc">This very portfolio — engineered from scratch with a custom Obsidian design system, frosted glass surfaces, technical dot matrix, 3D interactive terminal cards, and vanilla JavaScript animations.</p>
           <div class="pc-highlights">
-            <span>✨ Animations</span>
-            <span>📱 Responsive</span>
-            <span>⚡ Vanilla JS</span>
+            <span>✨ Pure Vanilla JS</span>
+            <span>📱 Fully Responsive</span>
+            <span>⚡ Obsidian UI/UX</span>
           </div>
           <div class="pc-stack">
             <span class="stag">HTML5</span>
             <span class="stag">CSS3</span>
             <span class="stag">JavaScript</span>
+            <span class="stag">GitHub Pages</span>
           </div>
         </div>
 
+        <!-- Cryptware Platform -->
+        <div class="proj-card" data-aos="fade-up" data-aos-delay="150" id="cryptware-card">
+          <div class="pc-header">
+            <div class="pc-icon crypt-icon">🏢</div>
+            <div style="display:flex;gap:6px;">
+              <a href="https://cryptware.vercel.app" target="_blank" class="pc-gh-btn" id="cryptware-web-btn" title="Live Site">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="https://github.com/yashk9898/Cryptware" target="_blank" class="pc-gh-btn" id="cryptware-gh-btn" title="GitHub Repository">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Cryptware — 3D IT Company Website</h3>
+          <p class="pc-desc">Interactive 3D IT solutions and agency website engineered with immersive 3D graphics, fluid interactive controls, and responsive modern layouts showcasing technology services and digital products.</p>
+          <div class="pc-highlights">
+            <span>🌐 Interactive 3D</span>
+            <span>🏢 IT Solutions</span>
+            <span>⚡ Vercel Deployed</span>
+            <span>🎨 High-End UI/UX</span>
+          </div>
+          <div class="pc-stack">
+            <span class="stag violet">JavaScript</span>
+            <span class="stag blue">3D Graphics</span>
+            <span class="stag cyan">CSS3 / HTML5</span>
+            <span class="stag">Vercel</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- GitHub Open Source & Activity Proof Banner -->
+      <div class="gh-banner" data-aos="fade-up" id="gh-activity-banner">
+        <div class="gh-banner-left">
+          <div class="gh-banner-avatar">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </div>
+          <div class="gh-banner-info">
+            <h4>
+              Yash Kava on GitHub
+              <span class="gh-handle-badge">@yashk9898</span>
+            </h4>
+            <p>Active contributor to <code>amderonlaw-ai/XTrendz</code>, <code>yashkmartian-art/Lerning.com-</code>, and 14+ open repositories.</p>
+          </div>
+        </div>
+        <div class="gh-stats-row">
+          <div class="gh-stat-chip">
+            <span class="val">1,032+</span>
+            <span class="lbl">Contributions (2026)</span>
+          </div>
+          <div class="gh-stat-chip">
+            <span class="val">99%</span>
+            <span class="lbl">Commit Ratio</span>
+          </div>
+          <div class="gh-stat-chip">
+            <span class="val">16+</span>
+            <span class="lbl">Repositories</span>
+          </div>
+          <a href="https://github.com/yashk9898" target="_blank" class="cta-primary sm" id="gh-banner-profile-link">
+            Follow on GitHub <span class="cta-arrow">↗</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -809,10 +913,13 @@
             <div class="cic-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
-            <div>
+            <div style="flex:1;">
               <p class="cic-label">Email</p>
               <a href="mailto:yashkava98@gmail.com" class="cic-val">yashkava98@gmail.com</a>
             </div>
+            <button class="btn-copy-email-mini" id="copyEmailMini" data-email="yashkava98@gmail.com" type="button" title="Copy email address" aria-label="Copy email address">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
           </div>
           <div class="cinfo-card" id="c-phone">
             <div class="cic-icon">

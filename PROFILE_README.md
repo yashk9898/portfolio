@@ -72,6 +72,19 @@
 
 ---
 
+### 🏢 [Cryptware — 3D IT Company Website](https://cryptware.vercel.app)
+> **Interactive 3D agency & digital solutions website highlighting software services with modern 3D graphics.**
+
+- **Live Application**: [cryptware.vercel.app](https://cryptware.vercel.app)
+- **GitHub Repository**: [github.com/yashk9898/Cryptware](https://github.com/yashk9898/Cryptware)
+- **Tech Stack**: `JavaScript` • `3D WebGL / CSS3` • `HTML5` • `Vercel`
+- **Features**:
+  - Immersive 3D interactive graphics and fluid scene controls
+  - Multi-section showcase for software solutions, agency offerings, and modern web products
+  - High-performance responsive layouts optimized for cross-browser deployment on Vercel
+
+---
+
 ## 🛠️ Tech Stack & Skills
 
 <div align="center">
