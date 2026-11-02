@@ -6,9 +6,9 @@
 [![GitHub Profile](https://img.shields.io/badge/GitHub-yashk9898-7c3aed?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yashk9898)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-**Ultra-fast, glassmorphic dark-mode developer portfolio showcasing full-stack enterprise applications and AI intelligence platforms.**
+**Ultra-fast, glassmorphic dark-mode developer portfolio showcasing full-stack enterprise applications, mobile ecosystems, and AI intelligence platforms.**
 
-[Explore Live Website](https://yashk9898.github.io/portfolio/) • [Featured Project: ATS.AI](https://crypthire-ai.vercel.app) • [Contact Yash](mailto:yashkawa5@gmail.com)
+[Explore Live Website](https://yashk9898.github.io/portfolio/) • [ATS.AI Live](https://crypthire-ai.vercel.app) • [xTrendz](https://www.xtrendz.com) • [Contact Yash](mailto:yashkava98@gmail.com)
 
 </div>
 
@@ -16,32 +16,45 @@
 
 ## 🌟 Overview
 
-This repository contains the source code for the personal portfolio of **Yash Kava**, a Full Stack & AI Solutions Engineer from Ahmedabad, India. Designed from scratch with modern web standards, featuring responsive glassmorphism, hardware-accelerated 3D tilt interactions, custom cursor physics, and deep showcases of production applications including **ATS.AI** and **Lerning.com**.
+This repository contains the source code for the personal portfolio of **Yash Kava**, a Full Stack Developer based in Ahmedabad, India. Currently engineering **xTrendz** at **Amderon Trendz Pvt Ltd** and creator of **ATS.AI** and **Lerning.com**. Designed from scratch with modern web standards, featuring responsive glassmorphism, hardware-accelerated 3D tilt interactions, custom cursor physics, and deep showcases of production applications.
 
 ---
 
-## 🚀 Featured Flagship Projects Showcased
+## 💼 Work Experience
+
+* **Full Stack Developer** — **Amderon Trendz Pvt Ltd** (Mar 2026 – Present • Ahmedabad, Hybrid)
+  * Build and maintain **xTrendz**, a multi-brand e-commerce platform spanning consumer mobile app, admin portal, and backend API.
+  * Customer mobile app built with **Expo / React Native** covering catalog browsing, cart, checkout, orders, and push notifications.
+  * Admin dashboard (**Next.js + TypeScript**) managing inventory, orders, shipping, marketing, and reporting.
+  * Backend API (**Node.js, Express, TypeScript**) with JWT authentication and **24+ controllers**.
+  * **Razorpay payments integration** with webhook verification and refund handling.
+  * Deployment and monitoring via **Docker, MongoDB, Redis, Nginx, Prometheus, and Grafana**.
+
+* **Full Stack Developer — Intern** — **Mars Technology Labs** (Aug 2025 – Mar 2026 • 8 Months • Ahmedabad)
+  * Architected and shipped **Lerning.com**, a school management platform replacing WhatsApp and Excel.
+  * 3 role-based dashboards (Admin, Teacher, Student) with JWT auth and RBAC.
+  * Real-time student-teacher messaging with **Socket.IO** and automated **Zoom API** class scheduling.
+  * Delivered 20+ modules: MCQ exam grading engine, attendance, fee tracking, and background **node-cron** jobs.
+
+---
+
+## 🚀 Featured Flagship Projects
 
 ### 1. 🤖 [ATS.AI — Enterprise Recruitment Intelligence Engine](https://crypthire-ai.vercel.app)
-- **Live URL**: [crypthire-ai.vercel.app](https://crypthire-ai.vercel.app)
-- **Candidate Portal**: [crypthire-ai.vercel.app/portal/apply](https://crypthire-ai.vercel.app/portal/apply)
-- **Admin Dashboard**: [crypthire-ai.vercel.app/portal/admin](https://crypthire-ai.vercel.app/portal/admin)
-- **Tech Stack**: Next.js 16.2, React 19, TypeScript 5, MongoDB Atlas, Docker (Standalone & Compose), Nodemailer, pdf-parse, Joi Validation, Vercel Serverless.
-- **Key Capabilities**:
-  - Automated AI resume text extraction and role compatibility scoring
-  - Real-time candidate pipeline lifecycle management
-  - Recruiter & admin analytics intelligence dashboard
-  - Automated interview and rejection email dispatch via Nodemailer
-  - Cloud-native MongoDB Atlas database with connection pooling and automated indexing
-  - Hardened multi-stage non-root Docker build (<200MB footprint) with Docker healthcheck monitoring
+* **Live App**: [crypthire-ai.vercel.app](https://crypthire-ai.vercel.app)
+* **Candidate Portal**: [crypthire-ai.vercel.app/portal/apply](https://crypthire-ai.vercel.app/portal/apply)
+* **Admin Dashboard**: [crypthire-ai.vercel.app/portal/admin](https://crypthire-ai.vercel.app/portal/admin)
+* **Tech Stack**: Next.js 16.2, React 19, TypeScript 5, MongoDB Atlas, Docker, Nodemailer, pdf-parse, Joi, Vercel Serverless.
+* **Capabilities**: AI resume screening, candidate fit scoring, lifecycle pipeline management, automated email dispatch, and hardened multi-stage Docker build (<200MB footprint).
 
-### 2. 🏫 [Lerning.com — School Digital Control Room & Live Classes](https://github.com/yashkmartian-art/Lerning.com-)
-- **Tech Stack**: React.js, Next.js, Node.js, MongoDB, Socket.IO, Zoom API, Spring Boot.
-- **Key Capabilities**:
-  - 3 dedicated role-based portals (Admin, Teacher, Student) with JWT auth
-  - Real-time chat powered by Socket.IO
-  - Automated Zoom class scheduling & meeting link generation
-  - 20+ features: attendance tracking, MCQ auto-grading engine, fee management, and background node-cron automation
+### 2. 🛍️ [xTrendz — Multi-Brand E-Commerce Platform](https://www.xtrendz.com)
+* **Live URLs**: [xtrendz.com](https://www.xtrendz.com) • [xtrendz.live](https://www.xtrendz.live)
+* **Tech Stack**: Expo / React Native, Next.js, Node.js, Express, TypeScript, Razorpay, Redis, Docker, Grafana.
+* **Capabilities**: Mobile shopping app, Next.js admin control panel, 24+ REST controllers, Razorpay webhook payments, and Redis caching.
+
+### 3. 🏫 [Lerning.com — School Digital Control Room & Live Classes](https://github.com/yashkmartian-art/Lerning.com-)
+* **Tech Stack**: React.js, Next.js, Node.js, MongoDB, Socket.IO, Zoom API, Java Spring Boot.
+* **Capabilities**: 3 role-based portals, live Socket.IO chat, auto-generated Zoom meetings, MCQ exam engine, and financial tracking.
 
 ---
 
@@ -60,15 +73,14 @@ This repository contains the source code for the personal portfolio of **Yash Ka
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## 🛠️ Technical Skills
 
-| Layer | Technologies |
-| :--- | :--- |
-| **Markup & Semantics** | HTML5, Semantic Sections, Accessibility ARIA tags |
-| **Styles & Visuals** | Modern CSS3, CSS Custom Properties, Flexbox & CSS Grid, Glassmorphism, Keyframe Animations |
-| **Interactivity** | Vanilla JavaScript (ES6+), IntersectionObserver API, requestAnimationFrame |
-| **Typography** | Plus Jakarta Sans, Space Grotesk, Fira Code (Google Fonts) |
-| **Deployment** | GitHub Pages / Vercel Serverless |
+* **Languages**: JavaScript (ES6+), TypeScript, Java, Python, SQL
+* **Frontend & Mobile**: React.js, Next.js, React Native (Expo), Redux Toolkit, Tailwind CSS, Bootstrap 5
+* **Backend**: Node.js, Express.js, Socket.IO, JWT, REST APIs (24+ Controllers)
+* **Database**: MongoDB (Mongoose, aggregation, indexing), Java Spring Boot, Spring Data MongoDB
+* **DevOps & Monitoring**: Docker, Nginx, Redis, Prometheus, Grafana, Git, GitHub, Vercel Serverless
+* **Integrations**: Razorpay, Zoom API, Google APIs, Azure Maps, Nodemailer, Twilio
 
 ---
 
@@ -87,47 +99,24 @@ portfolio/
 
 ## 💻 Local Development Setup
 
-To run this portfolio locally on your machine:
+```bash
+git clone https://github.com/yashk9898/portfolio.git
+cd portfolio
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yashk9898/portfolio.git
-   cd portfolio
-   ```
-
-2. **Open directly in your browser:**
-   - Double click `index.html`, OR
-   - Run with VS Code Live Server extension, OR
-   - Run using any local HTTP server:
-     ```bash
-     # Using Python 3:
-     python3 -m http.server 3000
-
-     # Or using npx serve:
-     npx serve .
-     ```
-
-3. **Visit in browser:**
-   Open `http://localhost:3000` to preview the site with full interactivity.
-
----
-
-## 🌐 Deploying to GitHub Pages
-
-1. In your GitHub repository (`yashk9898/portfolio`), go to **Settings** > **Pages**.
-2. Under **Build and deployment** > **Source**, choose **Deploy from a branch**.
-3. Select branch: `main` and folder `/ (root)`.
-4. Click **Save**. Within 60 seconds, your site will be live at:
-   `https://yashk9898.github.io/portfolio/`
+# Open directly or run with python:
+python3 -m http.server 3000
+```
 
 ---
 
 ## 👤 Author
 
 **Yash Kava**
+- **Role**: Full Stack Developer
+- **Company**: Amderon Trendz Pvt Ltd
 - **Location**: Ahmedabad, Gujarat, India 🇮🇳
 - **GitHub**: [@yashk9898](https://github.com/yashk9898)
-- **Email**: [yashkawa5@gmail.com](mailto:yashkawa5@gmail.com)
+- **Email**: [yashkava98@gmail.com](mailto:yashkava98@gmail.com)
 - **Phone**: [+91 90994 92667](tel:+919099492667)
 
 ---

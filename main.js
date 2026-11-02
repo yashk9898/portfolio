@@ -71,11 +71,11 @@ document.querySelectorAll('a, button, .proj-card, .xp-card, .cinfo-card, .ach-it
   const el = document.getElementById('roleText');
   if (!el) return;
   const roles = [
-    '"Full Stack & AI Engineer"',
-    '"Next.js 16 & React 19 Specialist"',
-    '"ATS.AI & Lerning.com Creator"',
+    '"Full Stack Developer"',
+    '"React Native & Next.js Engineer"',
+    '"xTrendz & ATS.AI Builder"',
     '"Node.js & MongoDB Architect"',
-    '"Docker & Cloud Builder"',
+    '"Docker, Redis & Cloud DevOps"',
   ];
   let pi = 0, ci = 0, del = false;
 
