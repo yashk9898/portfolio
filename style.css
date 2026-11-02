@@ -1715,6 +1715,75 @@ section {
   flex: 1;
 }
 
+/* Live Links Pill Bar in Project Cards */
+.pc-live-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pc-link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-family: var(--mono);
+  font-weight: 500;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--txt-dim);
+  transition: all 0.2s ease;
+}
+
+.pc-link-pill:hover {
+  border-color: var(--accent);
+  color: #fff;
+  background: var(--surf-hover);
+  transform: translateY(-1px);
+}
+
+.pc-link-pill.primary {
+  border-color: rgba(99, 102, 241, 0.35);
+  background: rgba(99, 102, 241, 0.08);
+  color: var(--accent3);
+}
+
+.pc-link-pill.primary:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  color: #fff;
+}
+
+.pulse-dot-mini {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  flex-shrink: 0;
+}
+
+.pulse-dot-mini.cyan {
+  background: var(--accent2);
+  box-shadow: 0 0 6px var(--accent2);
+}
+
+.bio-link, .text-link {
+  color: var(--accent3);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(165, 180, 252, 0.4);
+  transition: all 0.2s;
+}
+
+.bio-link:hover, .text-link:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
 .pc-highlights {
   display: flex;
   flex-wrap: wrap;

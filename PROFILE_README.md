@@ -9,8 +9,10 @@
 </p>
 
 [![Portfolio](https://img.shields.io/badge/Live_Portfolio-yashk9898.github.io-06b6d4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yashk9898.github.io/portfolio/)
-[![ATS.AI](https://img.shields.io/badge/ATS.AI_Demo-crypthire--ai.vercel.app-7c3aed?style=for-the-badge&logo=vercel&logoColor=white)](https://crypthire-ai.vercel.app)
-[![xTrendz](https://img.shields.io/badge/xTrendz-xtrendz.com-2563eb?style=for-the-badge&logo=shopify&logoColor=white)](https://www.xtrendz.com)
+[![ATS.AI](https://img.shields.io/badge/ATS.AI_Demo-crypthire--ai.vercel.app-6366f1?style=for-the-badge&logo=vercel&logoColor=white)](https://crypthire-ai.vercel.app)
+[![xTrendz Store](https://img.shields.io/badge/xTrendz_Store-xtrendz.com-2563eb?style=for-the-badge&logo=shopify&logoColor=white)](https://www.xtrendz.com)
+[![xTrendz Live](https://img.shields.io/badge/xTrendz_Live-xtrendz.live-0ea5e9?style=for-the-badge&logo=vercel&logoColor=white)](https://www.xtrendz.live)
+[![Cryptware 3D](https://img.shields.io/badge/Cryptware_3D-cryptware.vercel.app-10b981?style=for-the-badge&logo=vercel&logoColor=white)](https://cryptware.vercel.app)
 [![Email](https://img.shields.io/badge/Email-yashkava98%40gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yashkava98@gmail.com)
 
 </div>
@@ -49,7 +51,7 @@
 ### 🛍️ [xTrendz — Multi-Brand E-Commerce Platform](https://www.xtrendz.com)
 > **Full-stack e-commerce ecosystem covering orders, inventory, shipping, and payments end-to-end.**
 
-- **Live Web**: [xtrendz.com](https://www.xtrendz.com) • [xtrendz.live](https://www.xtrendz.live)
+- **Live Platforms**: [xtrendz.com (Store)](https://www.xtrendz.com) • [xtrendz.live (Web Application)](https://www.xtrendz.live)
 - **Tech Stack**: `Expo` • `React Native` • `Next.js` • `TypeScript` • `Node.js` • `Razorpay` • `Redis` • `Docker` • `Grafana`
 - **Features**:
   - Customer mobile application (catalog, cart, checkout, orders, push notifications)

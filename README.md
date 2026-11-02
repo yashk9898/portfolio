@@ -48,7 +48,7 @@ This repository contains the source code for the personal portfolio of **Yash Ka
 * **Capabilities**: AI resume screening, candidate fit scoring, lifecycle pipeline management, automated email dispatch, and hardened multi-stage Docker build (<200MB footprint).
 
 ### 2. 🛍️ [xTrendz — Multi-Brand E-Commerce Platform](https://www.xtrendz.com)
-* **Live URLs**: [xtrendz.com](https://www.xtrendz.com) • [xtrendz.live](https://www.xtrendz.live)
+* **Live URLs**: [xtrendz.com (Storefront)](https://www.xtrendz.com) • [xtrendz.live (Web Platform)](https://www.xtrendz.live)
 * **Tech Stack**: Expo / React Native, Next.js, Node.js, Express, TypeScript, Razorpay, Redis, Docker, Grafana.
 * **Capabilities**: Mobile shopping app, Next.js admin control panel, 24+ REST controllers, Razorpay webhook payments, and Redis caching.
 
