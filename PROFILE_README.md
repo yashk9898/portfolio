@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=24&pause=1000&color=7C3AED&center=true&vCenter=true&random=false&width=650&lines=Full+Stack+Developer;React.js+%2F+Next.js+%26+React+Native;Building+xTrendz+at+Amderon+Trendz;Creator+of+ATS.AI+%26+Lerning.com;1%2C000%2B+Contributions+in+2026)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=24&pause=1000&color=6366F1&center=true&vCenter=true&random=false&width=650&lines=Full+Stack+Developer;React.js+%2F+Next.js+%26+React+Native;Building+xTrendz+at+Amderon+Trendz;Creator+of+ATS.AI+%26+Lerning.com;1%2C037%2B+Contributions+in+2026)](https://git.io/typing-svg)
 
 <p align="center">
   <strong>Full Stack Developer with hands-on experience across React/Next.js, React Native, and Node.js/TypeScript. Currently building xTrendz, a multi-brand e-commerce platform.</strong>
@@ -139,12 +139,12 @@
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=yashk9898&show_icons=true&theme=radical&hide_border=true&bg_color=07080f&title_color=7c3aed&icon_color=06b6d4&text_color=e4e8f5" alt="Yash's GitHub Stats" />
-<img height="180em" src="https://streak-stats.demolab.com?user=yashk9898&theme=radical&hide_border=true&background=07080f&ring=7c3aed&fire=06b6d4&currStreakNum=7c3aed&sideNums=e4e8f5&currStreakLabel=06b6d4" alt="Yash's GitHub Streak" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=yashk9898&show_icons=true&theme=radical&hide_border=true&bg_color=07080d&title_color=6366f1&icon_color=0ea5e9&text_color=f8fafc" alt="Yash's GitHub Stats" />
+<img height="180em" src="https://streak-stats.demolab.com?user=yashk9898&theme=radical&hide_border=true&background=07080d&ring=6366f1&fire=0ea5e9&currStreakNum=6366f1&sideNums=f8fafc&currStreakLabel=0ea5e9" alt="Yash's GitHub Streak" />
 
 <br/>
 
-<img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yashk9898&layout=compact&theme=radical&hide_border=true&bg_color=07080f&title_color=7c3aed&text_color=e4e8f5" alt="Top Languages" />
+<img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yashk9898&layout=compact&theme=radical&hide_border=true&bg_color=07080d&title_color=6366f1&text_color=f8fafc" alt="Top Languages" />
 
 </div>
 
