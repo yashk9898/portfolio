@@ -969,6 +969,12 @@
         </div>
 
         <form class="contact-form" id="contactForm" action="https://formsubmit.co/yashkava98@gmail.com" method="POST" data-aos="fade-left">
+          <!-- Hidden Anti-Spam & FormSubmit Configuration -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://yashk9898.github.io/portfolio/?submitted=true" />
+          <input type="hidden" name="_autoresponse" value="Hi! Thanks for contacting me through my portfolio. I have received your message and will reply within 24 hours. — Yash Kava" />
+
           <div class="cf-row">
             <div class="cf-group">
               <label for="fname">Name</label>
@@ -990,8 +996,15 @@
           <button type="submit" class="cta-primary full" id="submit-form-btn">
             Send Message 🚀
           </button>
-          <div class="cf-success" id="cfSuccess">
-            <span>✅</span> Message sent! I'll reply within 24 hours.
+          
+          <div class="cf-status-box" id="cfStatusBox"></div>
+
+          <div class="cf-direct-email">
+            <span>Direct contact option:</span>
+            <a href="mailto:yashkava98@gmail.com" id="directMailtoLink" class="direct-email-link" title="Open in your default email client">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>yashkava98@gmail.com</span>
+            </a>
           </div>
         </form>
 

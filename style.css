@@ -2138,6 +2138,114 @@ a.cic-val:hover { color: var(--accent3); }
 }
 .cf-success.show { display: flex; }
 
+.cf-status-box {
+  display: none;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  transition: all 0.25s ease;
+}
+
+.cf-status-box.show {
+  display: block;
+}
+
+.cf-status-box.success {
+  background: var(--green-dim);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.cf-status-box.warning {
+  background: var(--amber-dim);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+}
+
+.cf-status-box.warning code {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  color: #fff;
+}
+
+.cf-status-box.error {
+  background: var(--rose-dim);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  color: #fb7185;
+}
+
+.cf-status-box.info {
+  background: var(--accent-dim);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: var(--accent3);
+}
+
+.status-action-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.status-action-link:hover {
+  color: var(--accent2);
+}
+
+.cf-direct-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  flex-wrap: wrap;
+}
+
+.direct-email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent3);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.direct-email-link:hover {
+  border-color: var(--accent);
+  color: #fff;
+  background: var(--accent-dim);
+}
+
+.spinner-mini {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spinMini 0.7s linear infinite;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+@keyframes spinMini {
+  to { transform: rotate(360deg); }
+}
+
 /* ══════════════════════════════════════
    FOOTER
 ══════════════════════════════════════ */

@@ -157,59 +157,90 @@ document.querySelectorAll('.proj-card, .exp-body, .xp-card, .ats-card-preview').
   io.observe(bars[0].closest('.mock-chart'));
 })();
 
-/* ── 10. CONTACT FORM (FormSubmit AJAX) ── */
+/* ── 10. CONTACT FORM (FormSubmit + Mailto Resilience) ── */
 (function initForm() {
-  const form    = document.getElementById('contactForm');
-  const success = document.getElementById('cfSuccess');
+  const form       = document.getElementById('contactForm');
+  const statusBox  = document.getElementById('cfStatusBox');
+  const directLink = document.getElementById('directMailtoLink');
   if (!form) return;
+
+  // Dynamically update mailto link as user types
+  function updateMailto() {
+    const name    = document.getElementById('fname')?.value.trim() || '';
+    const email   = document.getElementById('femail')?.value.trim() || '';
+    const subject = document.getElementById('fsubject')?.value.trim() || 'New Portfolio Message';
+    const message = document.getElementById('fmessage')?.value.trim() || '';
+    
+    if (directLink) {
+      const body = `Hi Yash,\n\n${message}\n\n---\nFrom: ${name} (${email})`;
+      directLink.href = `mailto:yashkava98@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  }
+
+  form.querySelectorAll('input, textarea').forEach(el => {
+    el.addEventListener('input', updateMailto);
+  });
+  updateMailto();
+
+  function setStatus(type, html) {
+    if (!statusBox) return;
+    statusBox.className = `cf-status-box show ${type}`;
+    statusBox.innerHTML = html;
+  }
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = form.querySelector('button[type=submit]');
-    
-    // Get form data
-    const name = document.getElementById('fname').value;
-    const email = document.getElementById('femail').value;
-    const subject = document.getElementById('fsubject').value || 'New Portfolio Message';
-    const message = document.getElementById('fmessage').value;
+    const btn     = form.querySelector('button[type=submit]');
+    const name    = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const subject = document.getElementById('fsubject').value.trim() || 'Portfolio Inquiry';
+    const message = document.getElementById('fmessage').value.trim();
 
     btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    // Derive AJAX endpoint from form action (replaces formsubmit.co/ with formsubmit.co/ajax/)
-    const ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+    btn.innerHTML = 'Sending… <span class="spinner-mini"></span>';
+    setStatus('info', 'Connecting to mail server…');
 
     try {
-      const response = await fetch(ajaxUrl, {
+      const response = await fetch("https://formsubmit.co/ajax/yashkava98@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
+          Accept: "application/json"
         },
         body: JSON.stringify({
           name: name,
           email: email,
           _subject: subject,
-          message: message
+          message: message,
+          _captcha: "false",
+          _template: "table"
         })
       });
 
-      const result = await response.json();
-      
-      if (response.ok) {
-        btn.textContent = 'Send Message 🚀';
-        btn.disabled = false;
-        success.classList.add('show');
+      const data = await response.json().catch(() => null);
+
+      if (response.ok && data && (data.success === "true" || data.success === true)) {
+        btn.innerHTML = 'Sent Successfully! ✅';
+        setStatus('success', '<span>✅</span> Message sent! I will reply to <strong>' + email + '</strong> within 24 hours.');
         form.reset();
-        setTimeout(() => success.classList.remove('show'), 6000);
+        updateMailto();
+        setTimeout(() => {
+          btn.innerHTML = 'Send Message 🚀';
+          btn.disabled = false;
+        }, 5000);
+      } else if (data && data.message && data.message.toLowerCase().includes('activate')) {
+        // FormSubmit requires one-time account activation
+        btn.innerHTML = 'Action Needed ⚠️';
+        btn.disabled = false;
+        setStatus('warning', '<strong>⚠️ FormSubmit One-Time Activation:</strong> FormSubmit sent an activation email to <code>yashkava98@gmail.com</code>.<br/>Please open Gmail and click <strong>"Activate Form"</strong> once. Subsequent submissions will arrive immediately!<br/><a href="' + (directLink?.href || 'mailto:yashkava98@gmail.com') + '" class="status-action-link">Click here to send directly via your Mail app ›</a>');
       } else {
-        throw new Error(result.message || 'Failed to send');
+        throw new Error(data?.message || 'Server returned an error');
       }
-    } catch (error) {
-      console.error(error);
-      btn.textContent = 'Error! Try Again';
+    } catch (err) {
+      console.warn('FormSubmit AJAX issue:', err);
+      btn.innerHTML = 'Open Mail Client ✉️';
       btn.disabled = false;
-      setTimeout(() => btn.textContent = 'Send Message 🚀', 3000);
+      setStatus('error', '<span>⚠️</span> Unable to send via web form directly.<br/><a href="' + (directLink?.href || 'mailto:yashkava98@gmail.com') + '" class="status-action-link">Click here to dispatch directly via your Email Client ›</a> or write directly to <strong>yashkava98@gmail.com</strong>.');
     }
   });
 })();
