@@ -140,16 +140,11 @@
 
 <div align="center">
 
-<img height="180em" src="https://github-stats-extended.vercel.app/api?username=yashk9898&show_icons=true&theme=radical&hide_border=true&bg_color=07080d&title_color=6366f1&icon_color=0ea5e9&text_color=f8fafc" alt="Yash's GitHub Stats" />
 <img height="180em" src="https://streak-stats.demolab.com?user=yashk9898&theme=radical&hide_border=true&background=07080d&ring=6366f1&fire=0ea5e9&currStreakNum=6366f1&sideNums=f8fafc&currStreakLabel=0ea5e9" alt="Yash's GitHub Streak" />
 
 <br/><br/>
 
-<img height="165em" src="https://github-stats-extended.vercel.app/api/top-langs/?username=yashk9898&layout=compact&theme=radical&hide_border=true&bg_color=07080d&title_color=6366f1&text_color=f8fafc" alt="Top Languages" />
 
-<br/><br/>
-
-<img width="98%" src="https://github-readme-activity-graph.vercel.app/graph?username=yashk9898&theme=react-dark&bg_color=07080d&color=6366f1&line=0ea5e9&point=f8fafc&area=true&hide_border=true" alt="Yash's Contribution Graph" />
 
 </div>
 
